@@ -146,7 +146,7 @@ void BluePillRemote::CheckButtons(void)
 						case Config::kOnBtn:	// On button pressed
 							mTickCount = 0;
 							mState = eLongGap;
-							mData = eOnData;
+							mData = eOnDataPrefix + Config::kChannelID;
 							// Turn on LED
 							digitalWrite(Config::kBtnPressedPin, HIGH);
 							// Start the timer
@@ -155,7 +155,7 @@ void BluePillRemote::CheckButtons(void)
 						case Config::kOffBtn:	// Off button pressed
 							mTickCount = 0;
 							mState = eLongGap;
-							mData = eOffData;
+							mData = eOffDataPrefix + Config::kChannelID;
 							// Turn on LED
 							digitalWrite(Config::kBtnPressedPin, HIGH);
 							// Start the timer

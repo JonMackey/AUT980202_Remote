@@ -48,33 +48,7 @@ protected:
 		*	The data prefixes are the same for all remotes
 		*/
 		eOnDataPrefix = 0x6820,
-		eOffDataPrefix = 0x6810,
-		
-		/*
-		*	The remote & receiver come from the factory with a sticker
-		*	indicating the preset channel ID.  There are 4 data bits as the last
-		*	nibble for the channel so the channel is in the range of 0 to 0xF.
-		*
-		*	The remote that I have is labeled channel D.  The channel is set by
-		*	cutting the PCB trace labeled D.
-		*
-		*	The receiver is the easiest to open.  Open to determine which traces
-		*	are cut to generate the appropriate channel value.
-		*
-		*	Channels ABCD correspond to values 8421, resp..  e.g. if the remote
-		*	has a D sticker, add 1 to the prefix, for B, add 4, etc..
-		*
-		*	In product screenshots on Amazon the remote was labeled E.  I assume
-		*	there's also F through O.  These correspond to PCB traces labeled
-		*	ABCD. These traces are cut to generate a number in the 0 to F range.
-		*/
-		//eChannelID = 8,	// A
-		//eChannelID = 4,	// B
-		//eChannelID = 2,	// C
-		//eChannelID = 1,	// D
-		eChannelID = 0xE,	// I
-		eOnData = eOnDataPrefix + eChannelID,
-		eOffData = eOffDataPrefix + eChannelID
+		eOffDataPrefix = 0x6810
 	};
 	bool			mButtonStateChanged;
 	uint32_t		mButtonPinState;
